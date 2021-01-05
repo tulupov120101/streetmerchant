@@ -110,6 +110,9 @@ export const Print = {
 	inStock(link: Link, store: Store, color?: boolean, sms?: boolean): string {
 		const productString = `${buildProductString(link, store)} :: IN STOCK`;
 
+		var beep = require('beepbeep');
+		beep(5);
+
 		if (color) {
 			return chalk.bgGreen.white.bold(`🚀🚨 ${productString} 🚨🚀`);
 		}
